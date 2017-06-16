@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E28ED9F1-B50B-4DE3-8540-C2B708B149E2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>WhiteBoardDetection</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Projects\WhiteBoardDetection\WhiteBoardDetection\opencv\build\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Projects\WhiteBoardDetection\WhiteBoardDetection\opencv\build\x64\vc14\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world320d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\calib3d\calib3d.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\contrib\contrib.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\contrib\detection_based_tracker.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\contrib\hybridtracker.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\contrib\openfabmap.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\contrib\retina.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\affine.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\core.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\core_c.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\cuda_devptrs.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\devmem2d.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\eigen.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\gpumat.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\internal.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\mat.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\opengl_interop.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\opengl_interop_deprecated.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\operations.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\types_c.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\version.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\core\wimage.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\features2d\features2d.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\allocator.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\all_indices.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\any.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\autotuned_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\composite_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\config.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\defines.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\dist.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\dummy.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\dynamic_bitset.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\flann.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\flann_base.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\general.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\ground_truth.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\hdf5.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\heap.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\hierarchical_clustering_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\index_testing.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\kdtree_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\kdtree_single_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\kmeans_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\linear_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\logger.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\lsh_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\lsh_table.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\matrix.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\miniflann.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\nn_index.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\object_factory.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\params.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\random.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\result_set.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\sampling.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\saving.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\simplex_downhill.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\flann\timer.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\block.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\border_interpolate.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\color.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\common.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\datamov_utils.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\detail\color_detail.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\detail\reduce.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\detail\reduce_key_val.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\detail\transform_detail.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\detail\type_traits_detail.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\detail\vec_distance_detail.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\dynamic_smem.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\emulation.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\filters.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\funcattrib.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\functional.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\limits.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\reduce.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\saturate_cast.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\scan.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\simd_functions.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\static_check.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\transform.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\type_traits.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\utility.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\vec_distance.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\vec_math.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\vec_traits.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\warp.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\warp_reduce.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\device\warp_shuffle.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\devmem2d.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\gpu.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\gpumat.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\gpu\stream_accessor.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\highgui\cap_ios.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\highgui\highgui.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\highgui\highgui_c.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\highgui\ios.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\imgproc\imgproc.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\imgproc\imgproc_c.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\imgproc\types_c.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\legacy\blobtrack.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\legacy\compat.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\legacy\legacy.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\legacy\streams.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\ml\ml.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\nonfree\features2d.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\nonfree\gpu.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\nonfree\nonfree.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\nonfree\ocl.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\objdetect\objdetect.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\ocl\matrix_operations.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\ocl\ocl.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\opencv.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\opencv_modules.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\photo\photo.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\photo\photo_c.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\autocalib.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\blenders.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\camera.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\exposure_compensate.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\matchers.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\motion_estimators.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\seam_finders.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\util.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\util_inl.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\warpers.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\detail\warpers_inl.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\stitcher.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\stitching\warpers.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\superres\optical_flow.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\superres\superres.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\ts\gpu_perf.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\ts\gpu_test.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\ts\ts.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\ts\ts_gtest.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\ts\ts_perf.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\deblurring.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\fast_marching.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\fast_marching_inl.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\frame_source.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\global_motion.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\inpainting.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\log.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\motion_stabilizing.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\optical_flow.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\stabilizer.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\videostab\videostab.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\video\background_segm.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\video\tracking.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\video\video.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cv.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cv.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cvaux.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cvaux.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cvwimage.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cxcore.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cxcore.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cxeigen.hpp" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cxmisc.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\highgui.h" />
+    <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\ml.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
