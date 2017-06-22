@@ -150,6 +150,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RectangleFinder.cpp" />
+    <ClCompile Include="RectangularContour.cpp" />
+    <ClCompile Include="SimilarityChecker.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="WhiteBoardCorners.cpp" />
+    <ClCompile Include="WhiteBoardRectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv2\calib3d\calib3d.hpp" />
@@ -313,6 +319,11 @@
     <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\cxmisc.h" />
     <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\highgui.h" />
     <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\ml.h" />
+    <ClInclude Include="RectangleFinder.h" />
+    <ClInclude Include="RectangularContour.h" />
+    <ClInclude Include="SimilarityChecker.h" />
+    <ClInclude Include="WhiteBoardCorners.h" />
+    <ClInclude Include="WhiteBoardRectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

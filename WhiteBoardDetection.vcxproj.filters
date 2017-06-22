@@ -13,9 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Custom">
+      <UniqueIdentifier>{841ea3e8-ad31-46cc-8598-e3c79d563b6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleFinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SimilarityChecker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangularContour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteBoardCorners.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WhiteBoardRectangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -502,6 +523,21 @@
     </ClInclude>
     <ClInclude Include="packages\OpenCV.2.4.11\build\native\include\opencv\ml.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangularContour.h">
+      <Filter>Header Files\Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleFinder.h">
+      <Filter>Header Files\Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="SimilarityChecker.h">
+      <Filter>Header Files\Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteBoardCorners.h">
+      <Filter>Header Files\Custom</Filter>
+    </ClInclude>
+    <ClInclude Include="WhiteBoardRectangle.h">
+      <Filter>Header Files\Custom</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
