@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <fstream>
 #include <math.h>
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -13,13 +14,14 @@
 using namespace std;
 using namespace cv;
 
-const string INPUT_IMAGE_PATH = "C:\\Temp\\input\\image.jpg";
-const string TEMPLATE1_IMAGE_PATH = "C:\\Temp\\input\\template1.jpg";
-const string TEMPLATE2_IMAGE_PATH = "C:\\Temp\\input\\template2.jpg";
-const string TEMPLATE3_IMAGE_PATH = "C:\\Temp\\input\\template3.jpg";
-const string TEMPLATE4_IMAGE_PATH = "C:\\Temp\\input\\template4.jpg";
-const string OUTPUT_IMAGE_PATH = "C:\\Temp\\output\\image.jpg";
-const string CONTOURED_IMAGE_PATH = "C:\\Temp\\output\\contours.jpg";
+const string INPUT_IMAGE_PATH = "\\input\\image.jpg";
+const string TEMPLATE1_IMAGE_PATH = "\\input\\template1.jpg";
+const string TEMPLATE2_IMAGE_PATH = "\\input\\template2.jpg";
+const string TEMPLATE3_IMAGE_PATH = "\\input\\template3.jpg";
+const string TEMPLATE4_IMAGE_PATH = "\\input\\template4.jpg";
+const string OUTPUT_IMAGE_PATH = "\\output\\image.jpg";
+const string CONTOURED_IMAGE_PATH = "\\output\\contours.jpg";
+string storageFolder;
 
 void deskew(double angle, vector<Point> points, Mat image)
 {
@@ -49,6 +51,17 @@ void rotateImageAccordingToRectangularContour(Mat image, RectangularContour rect
 	double angle = (angle1 + angle2 + angle3 + angle4) / 4;
 	
 	deskew(angle, rectangularContour.getContour(), image);
+}
+
+void rotateImage(double angle, Mat image)
+{
+	vector<Point> points;
+	points.push_back(Point(0, 0));
+	points.push_back(Point(image.cols - 1, 0));
+	points.push_back(Point(0, image.rows - 1));
+	points.push_back(Point(image.cols - 1, image.rows - 1));
+
+	deskew(angle, points, image);
 }
 
 WhiteBoardCorners findCorners(Mat image, vector<vector<Point>> contours, Mat templ1, Mat templ2, Mat templ3, Mat templ4)
@@ -134,31 +147,67 @@ WhiteBoardCorners findCorners(Mat image, vector<vector<Point>> contours, Mat tem
 	return whiteBoardCorners;
 }
 
-void main()
+void log(string text)
 {
-	Mat image = imread(INPUT_IMAGE_PATH, IMREAD_COLOR);
-	Mat imageCopy = imread(INPUT_IMAGE_PATH, IMREAD_GRAYSCALE);
+	ofstream myFile;
+	myFile.open(storageFolder + "\\wbdetectlog.txt", ios_base::app);
+	myFile << text;
+	myFile.close();
+}
 
-	Mat templ1 = imread(TEMPLATE1_IMAGE_PATH, IMREAD_COLOR);
-	Mat templ2 = imread(TEMPLATE2_IMAGE_PATH, IMREAD_COLOR);
-	Mat templ3 = imread(TEMPLATE3_IMAGE_PATH, IMREAD_COLOR);
-	Mat templ4 = imread(TEMPLATE4_IMAGE_PATH, IMREAD_COLOR);
+void main(int argc, char* argv[])
+{
+	if (argc > 1)
+	{
+		storageFolder = argv[1];
+		log("Storage folder: " + storageFolder + "\n");
+	}
+	else
+	{
+		storageFolder = "C:\\Temp";
+		log("Storage folder not specified. \n");
+	}
+	
+	try
+	{
+		Mat image = imread(storageFolder + INPUT_IMAGE_PATH, IMREAD_COLOR);
+		Mat imageCopy = imread(storageFolder + INPUT_IMAGE_PATH, IMREAD_GRAYSCALE);
 
-	RectangleFinder rectangleFinder(imageCopy);
-	rectangleFinder.find();
-	vector<vector<Point>> rectangularContours = rectangleFinder.getFoundContours();
-	vector<Vec4i> hierarchy = rectangleFinder.getHierarchy();
+		Mat templ1 = imread(storageFolder + TEMPLATE1_IMAGE_PATH, IMREAD_COLOR);
+		Mat templ2 = imread(storageFolder + TEMPLATE2_IMAGE_PATH, IMREAD_COLOR);
+		Mat templ3 = imread(storageFolder + TEMPLATE3_IMAGE_PATH, IMREAD_COLOR);
+		Mat templ4 = imread(storageFolder + TEMPLATE4_IMAGE_PATH, IMREAD_COLOR);
 
-	Mat counturedImage = Mat::zeros(image.size(), CV_8UC3);
-	drawContours(counturedImage, rectangularContours, -1, Scalar(0, 255, 0), 2, LINE_AA, hierarchy);
+		log("Images loaded \n");
 
-	imwrite(CONTOURED_IMAGE_PATH, counturedImage);
+		RectangleFinder rectangleFinder(imageCopy);
+		rectangleFinder.find();
+		vector<vector<Point>> rectangularContours = rectangleFinder.getFoundContours();
 
-	WhiteBoardCorners corners = findCorners(image, rectangularContours, templ1, templ2, templ3, templ4);
-	WhiteBoardRectangle rectangle(image, corners);
+		log("Rectangles found \n");
 
-	rotateImageAccordingToRectangularContour(image, RectangularContour(rectangle));
+		Mat counturedImage = Mat::zeros(image.size(), CV_8UC3);
 
-	image = image(Rect(rectangle.getX(), rectangle.getY(), rectangle.getWidth(), rectangle.getHeight()));
-	imwrite(OUTPUT_IMAGE_PATH, image);
+		imwrite(storageFolder + CONTOURED_IMAGE_PATH, counturedImage);
+
+		log("Contoured image written \n");
+
+		WhiteBoardCorners corners = findCorners(image, rectangularContours, templ1, templ2, templ3, templ4);
+		WhiteBoardRectangle rectangle(image, corners);
+
+		rotateImageAccordingToRectangularContour(image, RectangularContour(rectangle));
+
+		image = image(Rect(rectangle.getX(), rectangle.getY(), rectangle.getWidth(), rectangle.getHeight()));
+		rotateImage(180, image);
+
+		log("Image cropped and rotated. \n");
+
+		imwrite(storageFolder + OUTPUT_IMAGE_PATH, image);
+
+		log("Image written to " + storageFolder + OUTPUT_IMAGE_PATH);
+	}
+	catch (exception e)
+	{
+		log(e.what());
+	}
 }
